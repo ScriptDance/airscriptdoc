@@ -1,5 +1,6 @@
 import { defineUserConfig } from 'vuepress'
 import { defaultTheme } from 'vuepress'
+import { searchPlugin } from '@vuepress/plugin-search'
 
 
 export default {
@@ -11,8 +12,12 @@ export default {
       description: 'AirScript开发文档,Python自动化,Python脚本,Python游戏脚本',
     },
   },
+  plugins: [
+    searchPlugin({
+      // 配置项
+    }),
+  ],
   theme: defaultTheme({
-    // 默认主题配置
     logo: '/img/logo.svg',
     colorMode:'auto',
     colorModeSwitch:true,
