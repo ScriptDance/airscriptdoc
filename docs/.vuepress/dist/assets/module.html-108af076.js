@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-4ebc6b56","path":"/openapi/module.html","title":"工程|开放接口","lang":"en-US","frontmatter":{"title":"工程|开放接口"},"headers":[{"level":2,"title":"点击","slug":"点击","link":"#点击","children":[]}],"git":{"updatedTime":1692261375000,"contributors":[{"name":"自在","email":"240417809@qq.com","commits":1}]},"filePathRelative":"openapi/module.md"}');export{e as data};

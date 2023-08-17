@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-fffb8e28","path":"/guide/","title":"新手任务","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1692261375000,"contributors":[{"name":"自在","email":"240417809@qq.com","commits":1}]},"filePathRelative":"guide/README.md"}');export{e as data};
