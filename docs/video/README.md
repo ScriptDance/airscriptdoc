@@ -26,5 +26,7 @@ sidebar: auto
 
     <img style="width:100px;height:100px" src="https://airscript.oss-cn-hangzhou.aliyuncs.com/res/img/doc/gly3mkt.jpeg">
 
+[点击观看 视频教程](https://www.bilibili.com/video/BV1wu4y1q72v/)
+
 
 
