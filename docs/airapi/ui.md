@@ -1,5 +1,5 @@
 ---
-title: UI|AirScript开发文档
+title: 界面
 ---
 
 ``` python

@@ -68,6 +68,7 @@ export default {
                 '/airapi/action.md',
                 '/airapi/node.md',
                 '/airapi/screen.md',
+                '/airapi/ui.md',
                 '/airapi/tunner.md',
                 '/airapi/data.md',
                 '/airapi/intent.md',
