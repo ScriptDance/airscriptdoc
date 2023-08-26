@@ -13,9 +13,13 @@
 ![](/img/tool/pycharm/20230812203453.png)
 ![](/img/tool/pycharm/20230812203513.png)
 ![](/img/tool/pycharm/20230812203559.png)
+
 等待安装完成后点击`Close`
+
 ![](/img/tool/pycharm/20230812203705.png)
+
 然后打开按住键盘的`win + r`组合键，输入 `cmd` 再输入 `python` 验证是否安装成功，如果看到如下界面，代表安装成功。
+
 ![](/img/tool/pycharm/20230812203828.png)
 ## 2. 安装PyCharm
 
@@ -32,6 +36,7 @@
 ![](/img/tool/pycharm/20230812204618.png)
 ![](/img/tool/pycharm/20230812204634.png)
 ![](/img/tool/pycharm/20230812204649.png)
+
 等待安装完成后打开pycharm
 
 ### 测试环境
@@ -39,19 +44,28 @@
 ![](/img/tool/pycharm/20230812204906.png)
 然后可以看到如下界面，点击图中内容创建项目
 ![](/img/tool/pycharm/20230812205050.png)
+
 配置解释器
+
 ![](/img/tool/pycharm/20230812205244.png)
 ![](/img/tool/pycharm/20230812205323.png)
+
 点击OK后，会回到创建界面，点击`Create`创建项目
+
 ![](/img/tool/pycharm/20230812205411.png)
+
 直接点击右上角的运行，看看是否成功
+
 ![](/img/tool/pycharm/20230812205627.png)
 
 ### 汉化
 ![](/img/tool/pycharm/20230812210229.png)
 ![](/img/tool/pycharm/20230812210405.png)
+
 等待安装完成后，点击重启pycharm
+
 ![](/img/tool/pycharm/20230812210539.png)
+
 即可看到中文界面
 
 
@@ -88,11 +102,32 @@
 ![](/img/tool/pycharm/20230812214510.png)
 比如我现在新建的项目为AirScriptProject，而我的设备上可以看到已经有一个同名项目为AirScriptProject，那么这次创建就是拉取项目，如果我这次新建的是设备上没有的，那么就会在设备上新建项目。
 
-项目创建成功后重新连接设备，点击旁白的运行即可。
+项目创建成功后重新连接设备，点击旁边的运行即可。
 ![](/img/tool/pycharm/20230812220133.png)
 
 ## 4.代码提示的安装
 使用pip工具可以安装airscript的代码提示包
 ```bash
-pip install as-android
+pip install airscript
 ```
+
+![](/img/tool/pycharm/install_airscript_tip.png)
+
+## 5.贡献者
+
+| 网名        | 联系方式           |
+| ------------- |:-------------:|
+| 請丶随便        | QQ:1132454419           |
+
+--- 
+
+Pycharm - Airscript 是该作者通过 [编辑器拓展接口](./open.md) 完成的IDEA 插件.
+
+AirScript 官方 非常肯定,开发者做出的杰出贡献.
+
+---
+    如果您觉得该插件还有一些需求需要补充,请联系该开发者.
+
+    如果您觉得该插件好用,请记为该开发者打Call.
+
+

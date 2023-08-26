@@ -45,6 +45,10 @@ export default {
         text: '教程',
         link: '/video',
       },
+      {
+        text: '官网',
+        link: 'https://www.airscript.cn',
+      }
     ],
     sidebar: {
         '/guide': [
