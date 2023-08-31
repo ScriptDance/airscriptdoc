@@ -1,6 +1,6 @@
 ---
 home: true
-title: 文档
+title: 开发文档
 heroText: AirScript 开发文档
 tagline: 一起来学习 最强的自动化工具.
 heroImage: /img/airscript_logo_trans.svg

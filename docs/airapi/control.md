@@ -212,11 +212,50 @@ Channel(a)
 我们用 PostMan 模拟 发送指令
 <img src="https://airscript.oss-cn-hangzhou.aliyuncs.com/res/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/doc_air_ws_send_demo.jpg">
 
---- 
+---
+
+### 自定义指令接收
+
 接着我们在编辑器命令行查看,已经打印了发送的消息
 
 <img src="https://airscript.oss-cn-hangzhou.aliyuncs.com/res/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/doc_ws_send_demo_receive.jpg">
 
 
+--- 
 
+#### 使用须知
 
+::: tip 该方法需配合云控接口来使用
+- 云控接口发送自定义消息,小程序里接收相关消息
+
+如果您想建立双向通道,请使用websocket-client 连接 您自己的 ws服务器
+:::
+
+``` python
+# 导入消息通道
+from airscript.system import Channel
+```
+
+Channel<font color="#3376d0">(pyfunction)</font>
+
+<font color="#3376d0">建立一个云控自定义 消息监听</font>
+
+<font color="#3376d0">
+
+| 参数        | 类型           | 必须  | 备注|
+| ------------- |:-------------:| -----:|:----|
+| pyfunction      | python 函数 | 必填 | 需要一个形式参数,作为消息回调|
+
+</font>
+
+```python
+# 导入消息通道
+from airscript.system import Channel
+
+# 创建一个Python函数,作为消息通道回调
+def airws(msg):
+    print(msg)
+
+# 建立消息回调通道
+Channel(airws)
+```

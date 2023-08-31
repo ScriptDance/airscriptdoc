@@ -78,6 +78,7 @@ export default {
                 '/airapi/intent.md',
                 '/airapi/shell.md',
                 '/airapi/file.md',
+                '/airapi/media.md',
                 '/airapi/system.md',
                 '/airapi/control.md'
                 

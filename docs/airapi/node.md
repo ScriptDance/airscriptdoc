@@ -139,6 +139,8 @@ else:
 | Selector().packageName(string)    | 约束 包名,包名通常为 APP的ID|
 | Selector().childCount(number)    | 约束 孩子数量|
 | Selector().inputType(number)    | 约束 可输入类型,通常在EditText 中会存在输入类型|
+| Selector().drawingOrder(number)    | 约束 绘制排序,同一级别控件的第几个|
+| Selector().depth(number)    | 约束 控件深度,深度是指控件的层级|
 | Selector().maxTextLength(number)    | 约束 最大字符长度|
 | Selector().clickable(boolean)    | 约束 是否可点击|
 | Selector().checkable(number)    | 约束 是否可选中|
@@ -401,7 +403,7 @@ else:
 
 | 参数        | 类型           | 必须  | 备注|
 | ------------- |:-------------:| -----:|:----|
-| i      | number | 必填 | 子控件个数<br>整数:为约束具体个数 <br>小数:如1.2 则表示拥有1-2 个子控件的都满足结果  |
+| i      | number | 必填 | 输入类型约束  |
 
 
 </font>
@@ -416,6 +418,76 @@ from airscript.node import Selector
 
 # 约束 desc 为“这是关闭按钮”
 node =  Selector().packageName("com.aojoy.airscript").find()
+
+if node:
+    #找到了控件
+    print(node)
+else:
+    print('没有找到任何控件')
+```
+---
+
+###  drawingOrder
+
+<b>Selector().drawingOrder</b>(<font color="#3376d0">i</font>)
+
+控件绘制时候的序列,和child功能不同的是,该序列和dump可见顺序不一致,有可能乱序.
+
+
+<font color="#3376d0" size="2">
+
+| 参数        | 类型           | 必须  | 备注|
+| ------------- |:-------------:| -----:|:----|
+| i      | number | 必填 | 序列中的第几个 |
+
+
+</font>
+
+``` python
+
+
+# 案例: 查找出 绘制序列属性 为2的控件
+
+# 导包
+from airscript.node import Selector
+
+# 约束 drawingOrder 属性为2的控件
+node =  Selector().drawingOrder(2).find()
+
+if node:
+    #找到了控件
+    print(node)
+else:
+    print('没有找到任何控件')
+```
+---
+
+###  depth
+
+<b>Selector().depth</b>(<font color="#3376d0">i</font>)
+
+控件深度约束
+
+控件深度指:控件的层级
+
+<font color="#3376d0" size="2">
+
+| 参数        | 类型           | 必须  | 备注|
+| ------------- |:-------------:| -----:|:----|
+| i      | number | 必填 | 控件深度数值 |
+
+
+</font>
+
+``` python
+
+# 案例: 查找出 绘制序列属性 为2的控件
+
+# 导包
+from airscript.node import Selector
+
+# 约束 depth 属性为2的控件
+node =  Selector().depth(2).find()
 
 if node:
     #找到了控件
