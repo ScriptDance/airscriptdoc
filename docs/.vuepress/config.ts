@@ -46,6 +46,10 @@ export default {
         link: '/video',
       },
       {
+        text: '贡献者',
+        link: '/hero',
+      },
+      {
         text: '官网',
         link: 'https://www.airscript.cn',
       }
