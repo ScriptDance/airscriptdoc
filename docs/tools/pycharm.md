@@ -75,43 +75,55 @@
 
 ### 下载
 目前插件只能通过离线的方式安装，点击下面的链接下载最新插件。
+
 [Pycharm AirScript离线版下载](https://pan.baidu.com/s/1UGM6ucM_Wn7X4RiAQm7q9g?pwd=pggv)
 ### 安装插件
 ![](/img/tool/pycharm/20230812211222.png)
 ![](/img/tool/pycharm/20230812211302.png)
+
 然后选择刚刚下载插件包的位置，即可安装，安装完成后重启IDE使插件生效。
+
 ![](/img/tool/pycharm/20230812211403.png)
 
 ### 使用
 
 1. 打开手机上的AS找到开发地址
+
 2. 把设备信息配置到插件
 ![](/img/tool/pycharm/20230812213238.png)
 ![](/img/tool/pycharm/20230812213507.png)
+
 3. 点击连接设备
 ![](/img/tool/pycharm/20230812213620.png)
+
 提示设备连接成功即代表成功连接，如连接失败，可到浏览器访问手机AirScript APP提供的地址，看看是否可以成功访问。例如：
+
 ![](/img/tool/pycharm/20230812213726.png)
+
 浏览器可以打开，代表能成功访问，如果浏览器能打开插件还是提示连接失败，请联系作者。
 
 #### 新建/拉取项目
 ![](/img/tool/pycharm/20230812214033.png)
 ![](/img/tool/pycharm/20230812214357.png)
+
 依次输入项目名，选择设备列表。
+
 目录的最后一级为项目名，项目名对应设备上这个界面的项目名
+
 ![](/img/tool/pycharm/20230812214510.png)
+
 比如我现在新建的项目为AirScriptProject，而我的设备上可以看到已经有一个同名项目为AirScriptProject，那么这次创建就是拉取项目，如果我这次新建的是设备上没有的，那么就会在设备上新建项目。
 
 项目创建成功后重新连接设备，点击旁边的运行即可。
 ![](/img/tool/pycharm/20230812220133.png)
 
 ## 4.代码提示的安装
-使用pip工具可以安装airscript的代码提示包
+使用pip工具可以安装as-android的代码提示包
 ```bash
-pip install airscript
+pip install as-android
 ```
 
-![](/img/tool/pycharm/install_airscript_tip.png)
+![](/img/tool/pycharm/install_airscript_tip.jpg)
 
 ## 5.贡献者
 
