@@ -198,6 +198,35 @@ w.show()
 
 </font>
 
+- 窗口的组合引力 应该使用 ‘|’ 连接多个引力值
+``` python
+# 引力的组合写法
+# 右上角
+Window(...).gravity(48|5)
+
+# 右下角
+Window(...).gravity(80|5)
+
+#左上角
+Window(...).gravity(48|3)
+
+#左下角
+Window(...).gravity(80|3)
+
+#左垂直居中
+Window(...).gravity(3|16)
+
+#右垂直居中
+Window(...).gravity(5|16)
+
+#上横向居中
+Window(...).gravity(48|1)
+
+#下横向居中
+Window(...).gravity(80|1)
+
+```
+
 --- 
 
 ### 位置
@@ -322,6 +351,7 @@ w.call('fun1("自在老师",2)')
 | ------------- |:-------------:| -----:|:----|
 | msg    | string  | 必填 | 消息提示信息  |
 | dur    | number  | 可选 | 时间长度,单位毫秒  |
+| gravity    | number  | 可选 | [引力值](#引力) |
 | x    | number  | 可选 | 在屏幕上的x坐标<br> -1 为屏幕中间 |
 | y    | number  | 可选 | 在屏幕上的y坐标<br> -1 为屏幕中间 |
 
@@ -331,17 +361,26 @@ w.call('fun1("自在老师",2)')
 # 导包
 from airscript.ui.dialog import toast
 
-# 展示一个简单吐司提示,3秒后消失
+# 展示一个简单吐司提示,3秒后消失,位置偏屏幕中心点 y坐标+20%屏幕高度
 toast('我认识自在老师')
 
-```
+# 展示一个简单吐司提示,5秒后消失,位置偏屏幕中心点 y坐标+20%屏幕高度
+toast('我认识自在老师',5000)
 
-```python
-# 导包
-from airscript.ui.dialog import toast
+# 展示一个简单吐司提示,3秒后消失,位置偏屏幕中心点 x+100px,y+200px
+toast('我认识自在老师',3000,100,200)
 
-# 展示一个简单吐司提示,5秒后消失,在屏幕的左上角显示
-toast('我认识自在老师',5000,0,0)
+# 展示一个简单吐司提示,3秒后消失,位置偏屏幕中心点 y坐标-20%屏幕高度
+toast('我认识自在老师',3000,0,-0.2)
+
+# 展示一个简单吐司提示,3秒后消失,位置偏屏幕中心点 y坐标+20%屏幕高度
+toast('我认识自在老师',3000,0,0.2)
+
+# 展示一个简单吐司提示,3秒后消失,位置偏屏幕中心点 x坐标+20%屏幕宽度
+toast('我认识自在老师',3000,0.2,0)
+
+# 展示一个简单吐司提示,3秒后消失,位置为屏幕左上角位置
+toast('我认识自在老师',3000,3|48,0,0)
 
 ```
 
@@ -606,7 +645,7 @@ lw.show() # 展示
 from airscript.ui import Float
 ```
 
-### 隐藏悬浮窗
+### 隐藏
 ```python
 # 导包
 from airscript.ui import Float 
@@ -614,11 +653,26 @@ from airscript.ui import Float
 Float.hide()
 ```
 
-### 展示悬浮窗
+### 展示
 
 ```python
 # 导包
 from airscript.ui import Float 
 # 显示悬浮窗
 Float.show()
+```
+
+### 位置与透明度
+
+```python
+# 导包
+from airscript.ui import Float 
+# 显示悬浮窗,并设置位置为100,100
+Float.show(100,100)
+
+# 显示悬浮窗,并设置位置为 20%宽度,40%高度
+Float.show(0.2,0.4)
+
+# 显示悬浮窗,透明度设置为30%,并设置位置为100,100
+Float.show(0.3,100,100)
 ```
