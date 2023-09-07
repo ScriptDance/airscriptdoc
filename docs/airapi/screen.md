@@ -571,6 +571,79 @@ if ress:
 
 ```
 
+## 目标检测
+
+``` python
+# 导包
+from airscript.screen import yolo_v5
+```
+
+经过数据集训练,加载模型.检测出屏幕中的目标
+
+### 模型加载
+
+<b>yolo_v5</b><font color="#3376d0">(model)</font>
+
+创建一个yolov5目标检测对象,并初始化模型
+
+| 参数        | 类型           | 必须  | 备注|
+| ------------- |:-------------:| -----:|:----|
+| model      | string | 必填 | 从[模型库]("http://card.nspirit.cn/mlist.html")中加载:("模型名称:模型版本号")<br>也可加载模型文件,填写文件路径即可. |
+
+```python
+from airscript.screen import yolo_v5
+# 从模型库中加载
+yolo = yolo_v5("微信跳一跳:1.5")
+
+```
+
+```python
+from airscript.screen import yolo_v5
+# 从文件中加载模型()
+yolo = yolo_v5(R(__file__).root("as.ai"))
+
+```
+
+### 检测目标
+
+<b>yolo_v5(model).</b><font color="#3376d0">find_all()</font>
+
+检测屏幕中的所有目标
+
+| 返回结果       | 备注|
+| -------------|----:|
+| Obj[]   | 结果对象数组 |
+
+| Obj属性       | 备注|
+| -------------|----:|
+|x  | 目标的x坐标 |
+|y  | 目标的y坐标 |
+|w  | 目标的宽度 |
+|w  | 目标的高度 |
+|label  | 目标名称 |
+|prob  | 准确度,(0-1之间,1为100%准确) |
+
+
+```python
+from airscript.screen import yolo_v5
+# 从模型库中加载
+yolo = yolo_v5("微信跳一跳:1.5")
+
+res = yolo.find_all()
+
+if res:
+    #打印检测结果
+    print(res)
+
+```
+
+### 模型训练
+
+模型训练 有很多种方式
+
+[点这里,学习模型训练](./yolo_learn.md)
+
+
 
 ## 文字识别
 
