@@ -144,3 +144,22 @@ intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 R.context().startActivity(intent);
 
 ```
+
+### 案例:跳转设置界面
+
+```python
+from airscript.intent import Intent 
+from android.content import ComponentName
+from airscript.system import R
+
+intent = Intent()
+package = "com.android.settings"
+activity = "com.android.settings.Settings"
+componentName = ComponentName(package, activity)
+intent.setComponent(componentName)
+intent.setAction("android.intent.action.VIEW");
+
+# 这是固定的启动方法
+intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+R.context().startActivity(intent);
+```

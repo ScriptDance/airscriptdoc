@@ -258,6 +258,40 @@ FindColor('931,549,#EFEFEF|932,496,#EEEEEE|964,523,#EFEFEF|862,475,#0B0B16').ori
 ```
 </font>
 
+
+### 偏色
+
+<b>FindColors(colors)</b><font color="#3376d0">.diff(rgb)</font>
+
+<font color="#3376d0">设置偏色</font>
+
+> 缺省ori 默认为 2
+
+<font color="#3376d0">
+
+| 参数        | 类型           | 必须  | 备注|
+| ------------- |:-------------:| -----:|----:|
+| rgb      | string(rgb颜色值) | 必填 | 如‘#050505’ |
+
+<img src="/assets/img/findcolors_ore.png" style="width:300px; height:260px"/>
+
+- 1: 左上角到右下角，纵向开始找色，先找到 a 顶点。
+- 2: 左上角到右下角，横向开始找色，先找到 b 顶点。
+- 3: 右上角到左下角，横向开始找色，先找到 c 顶点。
+- 依此类推
+
+
+
+``` python
+# 导包
+from airscript.screen import FindColors
+
+# 构造一个FindColor对象,并指定找色的结果间距为 10
+FindColor('931,549,#EFEFEF|932,496,#EEEEEE|964,523,#EFEFEF|862,475,#0B0B16').ori(3)
+
+```
+</font>
+
 ### 查找一个结果
 
 <b>FindColors(colors)</b><font color="#3376d0">.find()</font>
@@ -641,7 +675,7 @@ if res:
 
 模型训练 有很多种方式
 
-[点这里,学习模型训练](./yolo_learn.md)
+[点这里,学习模型训练](./yolo/yolo_learn.md)
 
 
 
