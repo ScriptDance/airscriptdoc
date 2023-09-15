@@ -622,7 +622,7 @@ from airscript.screen import yolo_v5
 
 | 参数        | 类型           | 必须  | 备注|
 | ------------- |:-------------:| -----:|:----|
-| model      | string | 必填 | 从[模型库]("http://card.nspirit.cn/mlist.html")中加载:("模型名称:模型版本号")<br>也可加载模型文件,填写文件路径即可. |
+| model      | string | 必填 | 从[模型库](https://card.nspirit.cn/mlist.html) 中加载:("模型名称:模型版本号")<br>也可加载模型文件,填写文件路径即可. |
 
 ```python
 from airscript.screen import yolo_v5
