@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-744b3300","path":"/pay/","title":"支付提示","lang":"en-US","frontmatter":{"title":"支付提示","sidebar":"auto"},"headers":[{"level":2,"title":"支付提示","slug":"支付提示","link":"#支付提示","children":[]}],"git":{"updatedTime":null,"contributors":[]},"filePathRelative":"pay/README.md"}');export{t as data};

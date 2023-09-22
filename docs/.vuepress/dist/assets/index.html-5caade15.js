@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-744b3300","path":"/pay/","title":"支付提示","lang":"en-US","frontmatter":{"title":"支付提示","sidebar":"auto"},"headers":[{"level":2,"title":"支付提示","slug":"支付提示","link":"#支付提示","children":[]}],"git":{"updatedTime":1695026475000,"contributors":[{"name":"自在","email":"240417809@qq.com","commits":1}]},"filePathRelative":"pay/README.md"}');export{e as data};
