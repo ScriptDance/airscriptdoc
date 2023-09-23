@@ -690,23 +690,18 @@ from airscript.screen import Ocr
 
 ### 构造
 
-<b>Ocr</b><font color="#3376d0">(model_path)</font>
+<b>Ocr</b><font color="#3376d0">()</font>
 
 创建一个文字识别对象
 
-| 参数        | 类型           | 必须  | 备注|
-| ------------- |:-------------:| -----:|:----|
-| model_path      | string | 选填 | 模型路径,你可以输入您自定义模型的路径地址<br/> 默认会自动下载 ch_PPOCR-V3模型|
+
 
 ``` python
 # 导包
 from airscript.screen import Ocr
 
-# 创建一个中英文 PPOCR-V3 识别对象
+# 创建一个中英文识别对象
 Ocr()
-
-# 创建一个文字识别对象,并设置模型路径为 /sdcard/mymodel/
-Ocr("/sdcard/mymodel/")
 
 ```
 ### 范围
@@ -960,56 +955,7 @@ if ots:
         print(otRect[3][0],otRect[3][1]) # 左下角顶点x,y 坐标
 ```
 
-### 加载更多模型
-
-AirScript OCR 集成的是Paddle Ocrv3
-
-
-
-因此我们可以下载 更多的[paddle ocrv3 模型](https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/models_list.md)
-
-<font color="#de5d52">当然也可以加载 通过 paddle ocrv3 训练后的模型</font>
-
-python 传入自定义模型的要求案例:
-
-```python
-#如果在手机sd目录下有一个 模型文件夹 my_moudle,那么这个 my_module下必须包含7个子文件
-model_path = "/sdcard/my_moule/"
-#这样的话,就成功加载了 my_module 这个模型
-Ocr(model_path).find_all()
-
-```
-
-
-如果你要记载其他的模型.
-
-::: warning 加载自定义模型注意事项
-
-请确定传入的模型路径下包含7个文件,并且文件名称如下(文件名称必须更改一致):
-
-- 分类模型文件: 
-cls.pdiparams , cls.pdmodel
----
-- 检测模型文件:
-det.pdiparams , det.pdmodel
----
-- 识别模型文件:
-rec.pdiparams , rec.pdmodel
----
-- 字典文件
-keys.txt
 --- 
-如下图:必须包含 7 个文件
-
-<img src="/img/ocr_custom_model.png" style="width:200px">
-
-:::
-
-
-
-
-
-
 
 ## 比色
 ``` python
