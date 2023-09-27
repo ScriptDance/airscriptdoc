@@ -1,6 +1,6 @@
-import { defineUserConfig } from 'vuepress'
+
 import { defaultTheme } from 'vuepress'
-import { searchPlugin } from '@vuepress/plugin-search'
+import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 
 
 export default {
@@ -13,9 +13,12 @@ export default {
     },
   },
   plugins: [
-    searchPlugin({
-      // 配置项
+    docsearchPlugin({
+      appId: "HD4DKOIMRS",
+      apiKey: "0f31a30dff80c279f251176d11d718f9",
+      indexName: "airscript"
     }),
+    //   searchPlugin()
   ],
   theme: defaultTheme({
     logo: '/img/logo.svg',
