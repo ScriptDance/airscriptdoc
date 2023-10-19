@@ -513,7 +513,7 @@ Catch()
 from airscript.action import Catch
 
 # 捕获用户点击
-point =  Catch().click()
+p =  Catch().click()
 # 打印捕获点的x,y坐标
 print(p.x,p.y)
 
@@ -526,7 +526,7 @@ print(p.x,p.y)
 from airscript.action import Catch
 
 # 捕获用户点击,配置页面展示的信息,并闪烁屏幕
-point =  Catch().msg("请点击红包位置").shine(True).click()
+p =  Catch().msg("请点击红包位置").shine(True).click()
 # 打印捕获点的x,y坐标
 print(p.x,p.y)
 
@@ -555,7 +555,7 @@ print(p.x,p.y)
 from airscript.action import Catch
 
 # 展示界面显示信息‘请点击’,并捕获用户点击
-point =  Catch().msg("请点击").click()
+p =  Catch().msg("请点击").click()
 # 打印捕获点的x,y坐标
 print(p.x,p.y)
 
@@ -584,7 +584,7 @@ print(p.x,p.y)
 from airscript.action import Catch
 
 # 展示界面并闪屏提醒,捕获用户点击
-point =  Catch().shine(True).click()
+p =  Catch().shine(True).click()
 # 打印捕获点的x,y坐标
 print(p.x,p.y)
 

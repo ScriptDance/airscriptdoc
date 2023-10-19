@@ -45,6 +45,19 @@ export default {
         link: '/airapi',
       },
       {
+        text: '共享',
+        children:[
+          {
+            text: 'Pip拓展',
+            link: '/pipmodule',
+          },
+          {
+          text: 'UI模版',
+          link: '/resource',
+          }
+        ]
+      },
+      {
         text: '教程',
         link: '/video',
       },

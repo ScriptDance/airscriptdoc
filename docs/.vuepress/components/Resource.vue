@@ -7,47 +7,42 @@
         <!-- Replace with your image URL -->
         <img :src=img alt="AirScript Image">
         <div class="image-text">
-          <h1>AirScript <strong>UI Kit</strong></h1>
-          <h5>开发者分享的UI组件库 <strong>喜欢</strong> 就<strong>下载</strong>使用吧</h5>
+          <span style="font-size: 40px;">AirScript <strong>UI Kit</strong></span>
+          <div style="margin-top: 10px;">
+            <span>开发者分享的UI组件库 <strong>喜欢</strong> 就<strong>下载</strong>使用吧</span>
+          </div>
+          
         </div>
       </div>
     </div>
 
-    <div style="width: 100%;margin-top: 20px">
+    <div style="width: 80%; margin: 20px auto;">
+
       <!-- Data Display using el-card -->
       <el-row justify="space-around">
-        <el-col :span="12">
-          <el-card v-for="item in currentdatalist" :key="item.id" style="margin-bottom: 20px;" :body-style="{margin:0,padding:10}" @click="currentImg=item.img">
+        <el-col :span="24">
+          <el-card v-for="item in currentdatalist" :key="item.id" style="margin-bottom: 20px;" :body-style="{margin:0,padding:10}">
             <el-row>
-              <el-col :span="17">
-                {{item.name}}
+              <el-col :span="5">
+                <img  @mouseover="currentImg=item.img;showpic=true" @mouseout="showpic=false" style="max-height: 25vh; width: auto; max-width: 15vw; cursor: pointer;" v-bind:src="item.img"/>
               </el-col>
-              <el-col :span="3">
-                id: {{item.id}}
+              <el-col :span="14">
+                <strong>{{item.name}}</strong>
+                <div style="max-height: 20vh; overflow: scroll;" v-html="item.info"/>
               </el-col>
-              <el-col :span="4">
-                热度: {{item.download_num}}
+              <el-col :span="5">
+                <span>id: {{item.id}}</span>
+                <span style="margin-left: 20px;">热度: {{item.download_num}}</span>
+                <br/>
+                <br/>
+                <el-button @click="download(item)">下载</el-button>
+                <el-button @click="copyLink(item.id)">分享</el-button>
+                
               </el-col>
+              
             </el-row>
-            <el-row>
-              <el-col :span="17">
-                <div v-html="item.info"/>
-              </el-col>
-              <el-col :span="3">
-                <div  style="margin-top: 20px">
-                  <a :href="item.file_path">
-                    <el-button >下载</el-button>
-                  </a>
-                </div>
-              </el-col>
-              <el-col :span="4">
-                <el-button @click="copyLink(item.id)" style="margin-top: 20px">分享</el-button>
-              </el-col>
-            </el-row>
+            
           </el-card>
-        </el-col>
-        <el-col :span="9">
-          <el-image style="width: 100%" :src="currentImg"/>
         </el-col>
       </el-row>
     </div>
@@ -66,6 +61,15 @@
     </div>
 
   </div>
+
+  <div v-if="showpic" style="position: fixed; right: 0px; bottom: 0px; height: 90vh; max-width: 50vw; background-color: aqua;">
+    <el-image  style="width: auto;height: 100%; " :src="currentImg"/>
+  </div>
+
+ 
+  
+
+
 </template>
 
 <script setup>
@@ -87,6 +91,7 @@ const currentPage=ref(1)
 const pageSize=ref(10)
 const totalItems=ref(0)
 const currentImg=ref("")
+const showpic = ref(0); 
 
 const handleSizeChange = (val) => {
   currentdatalist.value=datalist.value.slice((currentPage.value-1)*pageSize.value,Math.min(currentPage.value*pageSize.value,totalItems.value))
@@ -112,6 +117,26 @@ const copyLink=async (id)=>{
     type: 'success',
   })
 }
+
+const download = (item) => {
+  // alert(item.img)
+  window.location.href = item.file_path;
+  // alert(item.path)
+
+};
+
+const mouseOverEvent = (item) => {
+  // alert(item.img)
+  currentImg = item.img
+  showpic = true;
+
+};
+
+const mouseOutEvent = () => {
+  // showpic = false;
+};
+
+
 
 
 onMounted(() => {
@@ -153,6 +178,7 @@ onMounted(() => {
 .image-container {
   position: relative;
   width: 100%;
+  height: 20vh;
   overflow: hidden; /* Hide any overflowing content */
 }
 .image-container::before {
