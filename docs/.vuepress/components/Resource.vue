@@ -36,7 +36,7 @@
                 <br/>
                 <br/>
                 <el-button @click="download(item)">下载</el-button>
-                <el-button @click="copyLink(item.id)">分享</el-button>
+                <el-button @click="copyLink(item.id)" class="copy-button">分享</el-button>
                 
               </el-col>
               
@@ -66,7 +66,6 @@
     <el-image  style="width: auto;height: 100%; " :src="currentImg"/>
   </div>
 
- 
   
 
 
@@ -80,6 +79,7 @@ import 'element-plus/dist/index.css'
 import axios from "axios";
 import { useRoute,useRouter } from 'vue-router'
 import {ElNotification} from "element-plus";
+import ClipboardJS from "clipboard";
 
 
 const navbarRef = ref(null)
@@ -109,13 +109,25 @@ const getFullUrl = () => {
   return `${protocol}//${host}${fullPath}`;
 };
 
-const copyLink=async (id)=>{
-  await navigator.clipboard.writeText(`${getFullUrl()}?shareid=${id}`);
-  ElNotification({
-    title: '分享成功',
-    message: '分享链接已复制到剪切板',
-    type: 'success',
-  })
+const copyLink = (id) => {
+  const clipboard = new ClipboardJS('.copy-button', {  // 使用复制按钮的class初始化clipboard
+    text: () => `${getFullUrl()}?shareid=${id}`
+  });
+
+  clipboard.on('success', (e) => {
+    ElNotification({
+      title: '分享成功',
+      message: '分享链接已复制到剪切板',
+      type: 'success',
+    });
+    e.clearSelection(); // 清除选中文本
+    clipboard.destroy(); // 销毁实例，避免多次初始化
+  });
+
+  clipboard.on('error', (e) => {
+    console.error('复制失败:', e);
+    clipboard.destroy(); // 销毁实例
+  });
 }
 
 const download = (item) => {
