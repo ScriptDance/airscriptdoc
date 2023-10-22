@@ -87,6 +87,7 @@ export default {
           {
             text: '开发文档',
             children: [
+                '/airapi/model.md',
                 '/airapi/base.md',
                 '/airapi/code.md',
                 '/airapi/action.md',
