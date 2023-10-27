@@ -590,3 +590,144 @@ print(p.x,p.y)
 
 ```
 ---
+
+## hid
+
+``` python
+# 导包
+from airscript.action import hid
+```
+
+hid 虚拟外设动作类,此模块可在无障碍模式下使用hid
+
+在使用前请确保 已经绑定设备成功
+
+### 点击
+<b>hid</b><font color="#3376d0">.click(x,y,dur)</font>
+
+点击屏幕某个坐标
+
+<font color="#3376d0" size="2">
+
+| 参数        | 类型           | 必须  | 备注|
+| ------------- |:-------------:| -----:|----:|
+| x      | number | 必填 |屏幕的x坐标|
+| y      | number | 必填 |屏幕的y坐标|
+| dur    | number | 可选 |点击屏幕的时长,单位毫秒(ms),默认为 20ms|
+
+<!-- |     |  |  |[视频教程:<img src="/assets/img/shipin2.png" width="30" height="30" alt="视频教程" style="margin-bottom:-8px" />](http://www.baidu.com)| -->
+
+</font>
+
+### 滑动
+
+hid.<b>slide</b>(<font color="#3376d0">x,y,x1,y1,dur</font>)
+
+模拟手指滑动
+
+<font color="#3376d0" size="2">
+
+| 参数        | 类型           | 必须  | 备注|
+| ------------- |:-------------:| -----:|----:|
+| x      | number | 必填 |滑动起始点 x 坐标|
+| y      | number | 必填 |滑动起始点 y 坐标|
+| x1      | number | 必填 |滑动结束点 x 坐标|
+| y1      | number | 必填 |滑动结束点 y 坐标|
+| dur    | number | 可选 |滑动过程耗费的时长,单位毫秒(ms),默认20ms|
+
+<!-- |     |  |  |[视频教程:<img src="/assets/img/shipin2.png" width="30" height="30" alt="视频教程" style="margin-bottom:-8px" />](http://www.baidu.com)| -->
+
+</font>
+
+### 按键
+hid.<b>key</b>(<font color="#3376d0">keycode...</font>)
+
+<font color="#3376d0" size="2">
+
+| 参数        | 类型           | 必须  | 备注|
+| ------------- |:-------------:| -----:|----:|
+| keycode      | string 可变参数 | 必填 | 输入的key值|
+
+</font>
+
+#### key值
+
+- **类型**: 
+
+     - 字母键:
+              - `a` - A键
+              - `b` - B键
+              - `c` - C键
+                  ...
+              - `z` - Z键
+
+    - 数字键:
+              - `1` - 数字1键
+              - `2` - 数字2键
+                  ...
+              - `0` - 数字0键
+    - 功能键:
+              - `enter` - 回车键
+              - `esc` - ESC键
+              - `backspace` - 退格键
+              - `tab` - Tab键
+              - `space` - 空格键
+              - `capsLock` - 大写锁定键
+              - `f1` - F1功能键
+                  ...
+              - `f12` - F12功能键
+              - `printScreen` - 打印屏幕键
+              - `scrollLock` - 滚动锁定键
+              - `pause` - 暂停键
+    - 导航键:
+              - `insert` - 插入键
+              - `home` - Home键
+              - `pageUp` - 上翻页键
+              - `delete` - 删除键
+              - `end` - End键
+              - `pageDown` - 下翻页键
+              - `rightArrow` - 右箭头键
+              - `leftArrow` - 左箭头键
+              - `downArrow` - 下箭头键
+              - `upArrow` - 上箭头键
+    - 符号键:
+              - `minus` - 减号键
+              - `equal` - 等号键
+              - `leftBracket` - 左方括号键
+              - `rightBracket` - 右方括号键
+              - `backslash` - 反斜杠键
+              - `semicolon` - 分号键
+              - `quote` - 单引号键
+              - `grave` - 重音符键
+              - `comma` - 逗号键
+              - `period` - 句号键
+              - `slash` - 斜杠键
+    - 小键盘:
+              - `numLock` - 小键盘锁定键
+              - `keypadDivide` - 小键盘除号键
+              - `keypadMultiply` - 小键盘乘号键
+              - `keypadSubtract` - 小键盘减号键
+              - `keypadAdd` - 小键盘加号键
+              - `keypadEnter` - 小键盘回车键
+              - `keypad1` - 小键盘1键
+                  ...
+              - `keypad9` - 小键盘9键
+              - `keypad0` - 小键盘0键
+              - `keypadDecimal` - 小键盘小数点键
+          
+      - **描述**: 要发送的按键值。
+    - `Shift`: 
+      - **类型**: Boolean | undefined
+      - **描述**: Shift键的状态，表示是否按下。不传默认为 false。
+    - `Ctrl`: 
+      - **类型**: Boolean | undefined
+      - **描述**: Ctrl键的状态，表示是否按下。不传默认为 false。
+    - `Alt`: 
+      - **类型**: Boolean | undefined
+      - **描述**: Alt键的状态，表示是否按下。不传默认为 false。
+    - `Command`: 
+      - **类型**: Boolean | undefined
+      - **描述**: Command键的状态，表示是否按下。不传默认为 false。
+    - `id`: 
+      - **类型**: String
+      - **描述**: 要操作的设备的唯一标识符。
