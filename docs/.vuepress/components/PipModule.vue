@@ -186,7 +186,7 @@ onMounted(() => {
   }
 
 
-  axios.get("http://py.airscript.cn/api/package/list").then(res=>{
+  axios.get("https://py.airscript.cn/api/package/list").then(res=>{
     console.log(res)
     res=res.data
     if (res.code!==1)
