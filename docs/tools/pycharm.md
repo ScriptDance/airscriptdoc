@@ -42,7 +42,9 @@
 ### 测试环境
 ![](/img/tool/pycharm/20230812204844.png)
 ![](/img/tool/pycharm/20230812204906.png)
+
 然后可以看到如下界面，点击图中内容创建项目
+
 ![](/img/tool/pycharm/20230812205050.png)
 
 配置解释器
@@ -124,42 +126,6 @@ pip install as-android
 ```
 
 ![](/img/tool/pycharm/install_airscript_tip.jpg)
-
-
-## 5.贡献者
-
-::: warning 請丶随便
-
-作者通过 [编辑器拓展接口](./open.md) 完成了 Pycharm 开发插件.
-
-- 如果您觉得该插件还有一些需求需要补充,请联系该开发者.
-
-- 如果您觉得该插件好用,请记为该开发者打Call.
-
-- QQ:1132454419
-
----
-
-> 奖励: iphone 14 一台
-
-::: 
---- 
-
-::: warning  句号
-
-作者提供了AirScript Python语法提示包.
-
-加速了开发提示语法进程, 提升开发者编码速率与准确度.
-
-- QQ:1831207432
-
----
-
-> 奖励: 永久VIP一个
-
-:::
-
---- 
 
 
 

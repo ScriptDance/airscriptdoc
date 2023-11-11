@@ -4,6 +4,8 @@ title: 开发工具
 
 # 哪个开发工具适合你呢?
 
+[视频教程 · 开发工具的介绍,安装与使用](https://www.bilibili.com/video/BV1sc411R7yb)
+
 ## 新手入门
 
 [如果您是一个新手 ,推荐您使用 原生WEB 开发](./webide.md)

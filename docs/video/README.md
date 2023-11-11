@@ -4,7 +4,11 @@ sidebar: auto
 ---
 
 
-## 官方教程
+## 教程
+
+### 开发工具的介绍与安装
+
+[开发工具 介绍,安装,使用](https://www.bilibili.com/video/BV1sc411R7yb)
 
 ### Python语法
 
