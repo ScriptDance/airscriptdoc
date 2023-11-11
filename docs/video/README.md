@@ -6,7 +6,7 @@ sidebar: auto
 
 ## 教程
 
-### 开发工具的介绍与安装
+### 开发工具
 
 [开发工具 介绍,安装,使用](https://www.bilibili.com/video/BV1sc411R7yb)
 
@@ -20,7 +20,14 @@ sidebar: auto
 
 [AirScript API · 视频](https://www.bilibili.com/video/BV1HX4y1i7pf)
 
-## 精品课程
+### 实战
+
+[手把手教你制作某音引流脚本](https://www.bilibili.com/video/BV1Ka4y1S7ux/) 作者:仙乐(QQ:1477782369)
+
+[微信跳一跳 · yolov5](https://www.bilibili.com/video/BV1CK4y1c7PD/)
+
+
+## 专栏
 
 ### 3分钟学堂
 
