@@ -704,6 +704,30 @@ from airscript.screen import Ocr
 Ocr()
 
 ```
+
+### 模式
+<b>Ocr()</b><font color="#3376d0">.mode(m)</font>
+
+<font color="#3376d0">识别模式:paddlev2默认 ,和paddlev3</font>
+
+<font color="#3376d0">
+
+| 参数        | 类型           | 必须  | 备注|
+| ------------- |:-------------:| -----:|----:|
+| m      | int | 必填 | 2 = paddle-v2 识别(该模式下精度不是很高,但所有设备都支持)<br> 3 = paddle-v3 该模式在部分设备上不支持,但识别精度很高.|
+
+
+</font>
+
+``` python
+#导包
+from airscript.screen import Ocr # 文字识别
+
+#将识别模式切换为paddlev3 ,如果不调用mode方法,默认paddlev2识别
+Ocr().mode(3)
+
+```
+
 ### 范围
 <b>Ocr()</b><font color="#3376d0">.rect(x,y,x1,y1)</font>
 
