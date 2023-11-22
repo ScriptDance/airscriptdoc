@@ -23,6 +23,31 @@ Screen.*
 
 ```
 
+### 图像缓存
+
+<b>Screen</b><font color="#3376d0">.cache(is_cache)</font>
+
+<font color="#3376d0">是否开启缓存屏幕,开启后所有图色检索都使用内存中缓存的图片.无论手机屏幕如何变化,都不会改变内存中的图片.</font>
+
+<font color="#3376d0">
+
+| 参数        | 类型           | 必须  | 备注|
+| ------------- |:-------------:| -----:|----:|
+| is_cache     | boolean | 必填 | True:缓存屏幕,在内存中保留一张截图,所有图色类方法,都会使用这张缓存图片<br>False:取消缓存|
+
+</font>
+
+``` python
+# 所属包
+from airscript.screen import Screen
+
+# 打开缓存
+Screen.cache(True) 
+
+# 关闭缓存
+Screen.cache(True) 
+
+```
 
 ### 从屏幕获取图像
 
@@ -604,6 +629,126 @@ if ress:
         print("准确度:",res["confidence"])
 
 ```
+
+## 区域颜色量
+``` python
+# 导包
+from airscript.screen import GetColorNum
+```
+
+获取全屏 或指定区域的颜色点数量
+
+### 构造
+
+GetColorNum()
+
+GetColorNum(colors)
+
+```python
+# 导包
+from airscript.screen import GetColorNum
+
+# 创建一个获取区域颜色数量的对象
+GetColorNum()
+
+# 创建一个获取区域颜色数量的对象 ,并指定颜色值
+
+GetColorNum("#FFFFFF|#000000-#FFFFFF")
+
+```
+
+### 颜色值
+
+设置要查找的颜色值
+
+<b>GetColorNum().</b><font color="#3376d0">colors(strcolr)</font>
+
+| 参数        | 类型           | 必须  | 备注|
+| ------------- |:-------------:| -----:|:----|
+| strcolr      | string | 必填 | 格式1: "#FFFFFF" 检索单一颜色值数量<br> 格式2: "#FFFFFF\\|#000000" 多种颜色满足其一则算数<br>格式3:"#000000-#111111" 给定颜色值 在 两个颜色值之间则算数 |
+
+```python
+# 导包
+from airscript.screen import GetColorNum
+
+# 格式1:
+num = GetColorNum().colors("#FFFFFF").find()
+print(num)
+
+# 格式2:
+num = GetColorNum().colors("#FFFFFF|#000000").find()
+print(num)
+
+# 格式3:
+num = GetColorNum().colors("#000000-#111111").find()
+print(num)
+
+
+# 混合模式:
+num = GetColorNum().colors("#FFFFFF|#000000-#111111").find()
+print(num)
+
+```
+
+
+### 范围
+
+指定 区域范围 
+
+<b>GetColorNum().</b><font color="#3376d0">rect(left,top,right,bottom)</font>
+
+| 参数        | 类型           | 必须  | 备注|
+| ------------- |:-------------:| -----:|:----|
+| left,top,right,bottom      | int | 必填 | 屏幕范围坐标,可用图色检索工具获取|
+
+```python
+# 导包
+from airscript.screen import GetColorNum
+
+num = GetColorNum("#FFFFFF").rect(0,0,200,200).find()
+print(num)
+
+```
+
+### 相似度
+
+设置相似度
+
+<b>GetColorNum().</b><font color="#3376d0">sim(arg)</font>
+
+| 参数        | 类型           | 必须  | 备注|
+| ------------- |:-------------:| -----:|:----|
+| arg     | int | 必填 | 0-1之间,默认0.9,表示90%相似度颜色都算在内|
+
+```python
+# 导包
+from airscript.screen import GetColorNum
+
+num = GetColorNum("#FFFFFF").sim(0.85).find()
+print(num)
+
+```
+
+### 查找
+
+执行查找
+
+<b>GetColorNum().</b><font color="#3376d0">find()</font>
+
+- 无参数
+
+```python
+# 导包
+from airscript.screen import GetColorNum
+
+num = GetColorNum("#FFFFFF").sim(0.85).find()
+
+print(num)
+
+```
+
+
+
 
 ## 目标检测
 

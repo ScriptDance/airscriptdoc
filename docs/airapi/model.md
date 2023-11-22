@@ -68,9 +68,9 @@ brew install libusb
 
 | 平台        |
 | --- |
-| [win-x64](https://airscript.oss-cn-hangzhou.aliyuncs.com/hid/ASHID-win-x64.exe)   |
-| [macos-x64](https://airscript.oss-cn-hangzhou.aliyuncs.com/hid/ASHID-macos-x64) |
-| [macos-arm64](https://airscript.oss-cn-hangzhou.aliyuncs.com/hid/ASHID-macos-arm64)|
+| [win-x64](https://airscript.oss-cn-hangzhou.aliyuncs.com/hid/AirScript-win-x64-vpn.exe.zip)   |
+| [macos-x64](https://airscript.oss-cn-hangzhou.aliyuncs.com/hid/AirScript-mac-x64-vpn.tar.gz) |
+| [macos-arm64](https://airscript.oss-cn-hangzhou.aliyuncs.com/hid/AirScript-mac-arm-vpn.tar.gz)|
 | [linux-x64](https://airscript.oss-cn-hangzhou.aliyuncs.com/hid/ASHID-linux-x64)|
 
 ![](/img/model/hid_soft_open1.jpg)
