@@ -158,6 +158,68 @@ cpFile =  Screen.toFile(R.sd('/a/4.jpg'),Screen.bitmap(10,10,500,500),30);
 ```
 ---
 
+### 图像转base64
+<b>Screen</b><font color="#3376d0">.base64(bitmap)</font>
+
+<font color="#3376d0">将指定bitmap 转换为base64字符串</font>
+
+<font color="#3376d0">
+
+| 参数        | 类型           | 必须  | 备注|
+| ------------- |:-------------:| -----:|----:|
+| bitmap     | int | 选填 |要转换的bitmap图像,可通过Screen.bitmap()获取|
+
+
+| 返回结果       | 备注|
+| :-------------|----:|
+| string   | base64字符串 |
+
+</font>
+
+```python
+from airscript.screen import Screen 
+
+# 先获取Bitmap截图
+bp = Screen.bitmap()
+
+#再将bitmap 转换为 base64 字符串
+b64str = Screen.base64(bp)
+print(b64str)
+
+```
+
+### 图像缩放
+<b>Screen</b><font color="#3376d0">.maxside(bitmap,max_side_len)</font>
+
+<font color="#3376d0">将图像最大边缩放至指定大小,图片整体等比缩放.</font>
+
+<font color="#3376d0">
+
+| 参数        | 类型           | 必须  | 备注|
+| ------------- |:-------------:| -----:|----:|
+| bitmap     | int | 选填 |要缩放的bitmap图像,可通过Screen.bitmap()获取|
+| max_side_len     | int | 选填 |要缩放最大边 的指定长度|
+
+
+| 返回结果       | 备注|
+| :-------------|----:|
+| android.graphics.Bitmap    | java中的Bitmap对象,详细属性见:<br>[https://developer.android.google.cn/reference/kotlin/android/graphics/Bitmap?hl=en](https://developer.android.google.cn/reference/kotlin/android/graphics/Bitmap?hl=en) |
+
+</font>
+
+```python
+from airscript.screen import Screen 
+
+# 先获取Bitmap截图
+bp = Screen.bitmap()
+
+#将 bitmap 图像 最大边缩放至1000,图片等比缩放.
+bp = Screen.maxside(bp,1000)
+
+```
+
+---
+
 ## 找色 <a href="https://www.bilibili.com/video/BV1HX4y1i7pf?p=21" title="视频教程" style="margin-left:5px"><img style="width:20px;height:20px;" src="/assets/img/ico_video_player.png"></a>
 ``` python
 # 导包
