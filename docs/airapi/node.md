@@ -26,6 +26,8 @@ from airscript.node
 from airscript.node import Selector
 ```
 
+### 构造
+
 <b>Selector</b>(<font color="#3376d0">mode</font>)
 
 创建一个选择器
@@ -49,8 +51,38 @@ Selector(1)
 
 ```
 
-
 <!-- 启动查询,并得到查询结果 -->
+
+### 缓存
+
+- 静态方法
+
+<b>Selector</b>.<font color="#3376d0">cache(is_cache)</font>
+
+设置选择器是否缓存所有控件
+
+缓存后,控件的查找,都在缓存中进行.
+
+使用此方法后,查找速度会变快. 但请注意无论界面变化,查找始终使用缓存中的数据.
+
+| 参数        | 类型           | 必须  | 备注|
+| ------------- |:-------------:| -----:|----:|
+| is_cache      | boolean | 必填 |True:开启缓存, Flase:关闭缓存|
+
+``` python
+#案例
+
+# 导包
+from airscript.node import Selector
+# 设置开启缓存
+Selector.cache(True)
+
+# 设置关闭缓存
+Selector.cache(False)
+
+```
+
+
 
 ## 选择器_查找
 

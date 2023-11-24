@@ -26,12 +26,15 @@
 
 ## 3. 输出HelloWorld
 
+创建一个工程,在工程中输入 以下代码
+
+! 请注意,使用 英文双引号 "" 
+
+```python
+print("Hello World")
 ```
-创建一个工程,在工程中输入 “HelloWorld”
 
 点击 ▶️ 运行程序
-
-```
 
 <img src="/img/as_first_app.jpg">
 
